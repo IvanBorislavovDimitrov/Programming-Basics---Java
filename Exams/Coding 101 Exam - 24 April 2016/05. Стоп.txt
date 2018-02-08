@@ -1,0 +1,37 @@
+package twenty.fourt.of.april.two.thousand.and.sixteen;
+
+import java.util.Scanner;
+
+public class Stop {
+
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+        int n = input.nextInt();
+        System.out.printf("%s%s%s%n", repeatString(".", n + 1),
+                repeatString("_", 2 * n + 1),
+                repeatString(".", n + 1));
+        int last = 0;
+        for (int i = 0; i < n; ++i, ++last) {
+            System.out.printf("%s//%s\\\\%s%n", repeatString(".", n - i),
+                    repeatString("_", 2 * n + 1 - 2 + 2 * i),
+                    repeatString(".", n - i));
+        }
+
+        int midLine = 2 * n + 1 - 2 + 2 * last - 5;
+        System.out.printf("//%sSTOP!%s\\\\%n", repeatString("_", midLine / 2),
+                repeatString("_", midLine / 2));
+        for (int i = 0; i < n; ++i, --last) {
+            System.out.printf("%s\\\\%s//%s%n", repeatString(".", i),
+                    repeatString("_", 2 * n + 1 - 2 + 2 * last),
+                    repeatString(".", i));
+        }
+    }
+
+    public static String repeatString(String input, int count) {
+        StringBuilder sb = new StringBuilder();
+        for (int i = 0; i < count; ++i) {
+            sb.append(input);
+        }
+        return sb.toString();
+    }
+}

@@ -1,0 +1,54 @@
+import java.util.Scanner;
+
+public class Vacation {
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+        byte oldPeople = input.nextByte();
+        byte pupils = input.nextByte();
+        byte overnights = input.nextByte();
+        input.nextLine();
+        String transport = input.nextLine();
+        transport = transport.toLowerCase();
+        double priceForOldPeopleTransport = 0, priceForPupilsTransport = 0, allSum = 0;
+        switch (transport){
+            case "train":{
+                if ((oldPeople + pupils) >= 50){
+                    priceForOldPeopleTransport = 24.99 * oldPeople / 2;
+                    priceForPupilsTransport = 14.99 * pupils / 2;
+                }
+                else {
+                    priceForOldPeopleTransport = 24.99 * oldPeople;
+                    priceForPupilsTransport = 14.99 * pupils;
+                }
+                allSum = (priceForOldPeopleTransport + priceForPupilsTransport) * 2 + 82.99 * overnights;
+                allSum *= 1.1; // price after commission
+                break;
+            }
+            case "bus":{
+                priceForOldPeopleTransport = 32.50 * oldPeople;
+                priceForPupilsTransport = 28.50 * pupils;
+                allSum = (priceForOldPeopleTransport + priceForPupilsTransport) * 2 + 82.99 * overnights;
+                allSum *= 1.1; // price after commission
+                break;
+            }
+            case "boat":{
+                priceForOldPeopleTransport = 42.99 * oldPeople;
+                priceForPupilsTransport = 39.99 * pupils;
+                allSum = (priceForOldPeopleTransport + priceForPupilsTransport) * 2 + 82.99 * overnights;
+                allSum *= 1.1; // price after commission
+                break;
+            }
+            case "airplane":{
+                priceForOldPeopleTransport = 70.00 * oldPeople;
+                priceForPupilsTransport = 50.00 * pupils;
+                allSum = (priceForOldPeopleTransport + priceForPupilsTransport) * 2 + 82.99 * overnights;
+                allSum *= 1.1; // price after commission
+                break;
+            }
+            default:
+                System.out.println("Incorrect input");
+        }
+        System.out.printf("%.2f\n", allSum);
+
+    }
+}

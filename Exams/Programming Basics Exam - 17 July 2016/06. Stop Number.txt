@@ -1,0 +1,17 @@
+import java.util.Scanner;
+
+public class StopNumber {
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+        int smallerNumber = input.nextInt();
+        int biggerNumber = input.nextInt();
+        int stopNumber = input.nextInt();
+        for (int i = biggerNumber; i >= smallerNumber; i--){
+            if (i % 2 == 0 && i % 3 == 0){
+                if (i == stopNumber)
+                    break;
+                System.out.print(i + " ");
+            }
+        }
+    }
+}

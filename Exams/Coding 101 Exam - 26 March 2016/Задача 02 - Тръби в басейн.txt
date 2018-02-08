@@ -1,0 +1,30 @@
+import java.text.DecimalFormat;
+import java.util.Scanner;
+
+public class PipesInPool {
+
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+        DecimalFormat decimalFormat = new DecimalFormat("#.##");
+        int volumeOfPool = input.nextInt();
+        int firstPipeLitres = input.nextInt();
+        int secondPipeLitres = input.nextInt();
+        double hoursThatWorkerIsMissing = input.nextDouble();
+
+        double firstPipeForHoursMissing = firstPipeLitres * hoursThatWorkerIsMissing;
+        double secondPipeForHoursMissing = secondPipeLitres * hoursThatWorkerIsMissing;
+
+        double litresFull = firstPipeForHoursMissing + secondPipeForHoursMissing;
+        if (litresFull <= volumeOfPool) {
+            System.out.printf("The pool is %.0f%% full. Pipe 1: %.0f%%. Pipe 2: %.0f%%.%n",
+                    Math.floor(litresFull / volumeOfPool * 100),
+                    Math.floor(firstPipeForHoursMissing / litresFull * 100),
+                    Math.floor(secondPipeForHoursMissing / litresFull * 100));
+        }
+        else {
+            System.out.printf("For %s hours the pool overflows with %.1f liters.%n",
+                    decimalFormat.format(hoursThatWorkerIsMissing),
+                    litresFull - volumeOfPool);
+        }
+    }
+}

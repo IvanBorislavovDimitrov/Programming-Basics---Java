@@ -1,0 +1,61 @@
+package sixth.of.march.two.thousand.and.sixteen;
+
+import java.util.Scanner;
+
+public class OnTimeForExam {
+
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+        int hourOfExam = Integer.parseInt(input.nextLine());
+        int minuteOfExam = Integer.parseInt(input.nextLine());
+        int hourOfComing = Integer.parseInt(input.nextLine());
+        int minuteOfComing = Integer.parseInt(input.nextLine());
+
+        int hoursDifference = hourOfExam - hourOfComing;
+        int minutesDifference = minuteOfExam - minuteOfComing;
+        minutesDifference += (hoursDifference * 60);
+
+        if (minutesDifference < 0) {
+            System.out.printf("Late%n");
+            minutesDifference = Math.abs(minutesDifference);
+            if (minutesDifference >= 60) {
+                int finHours = minutesDifference / 60;
+                int finMins = minutesDifference % 60;
+                if (finMins < 10) {
+                    System.out.printf("%d:0%d hours after the start%n", finHours, finMins);
+                }
+                else {
+                    System.out.printf("%d:%d hours after the start%n", finHours, finMins);
+                }
+            }
+            else {
+                System.out.printf("%d minutes after the start%n", minutesDifference);
+            }
+        }
+        else if (minutesDifference <= 30) {
+            if (minutesDifference == 0) {
+                System.out.printf("On time%n");
+            }
+            else {
+                System.out.printf("On time%n");
+                System.out.printf("%d minutes before the start%n", minutesDifference);
+            }
+        }
+        else {
+            System.out.printf("Early%n");
+            if (minutesDifference >= 60) {
+                int finHours = minutesDifference / 60;
+                int finMins = minutesDifference % 60;
+                if (finMins < 10) {
+                    System.out.printf("%d:0%d hours before the start%n", finHours, finMins);
+                }
+                else {
+                    System.out.printf("%d:%d hours before the start%n", finHours, finMins);
+                }
+            }
+            else {
+                System.out.printf("%d minutes before the start%n", minutesDifference);
+            }
+        }
+    }
+}

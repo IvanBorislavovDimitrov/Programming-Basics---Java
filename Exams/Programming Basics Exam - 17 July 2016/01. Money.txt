@@ -1,0 +1,20 @@
+import java.util.Scanner;
+
+public class Money {
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+        int bitCoins = input.nextInt();
+        double chineseMoney = input.nextDouble();
+        double commission = input.nextDouble();
+
+        bitCoins *= 1168; // bitCoins in levove
+
+        chineseMoney *= 0.15; // chineseMoney in dollars
+        chineseMoney *= 1.76; // chineseMoney in levove
+
+        double allMoneyInEuro = (bitCoins + chineseMoney) / 1.95; //bitCoins in euro
+
+        commission = allMoneyInEuro * commission / 100; // new commission
+        System.out.format("%.2f", allMoneyInEuro - commission); // money after commission
+    }
+}

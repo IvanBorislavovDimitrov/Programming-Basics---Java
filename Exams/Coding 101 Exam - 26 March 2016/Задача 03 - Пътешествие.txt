@@ -1,0 +1,43 @@
+package twenty.six.of.march.two.thousand.and.sixteen;
+
+import java.util.Scanner;
+
+public class Trip {
+
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+        double budget = Double.parseDouble(input.nextLine());
+        String season = input.nextLine();
+        season = season.toLowerCase();
+        switch (season) {
+            case "summer":
+                if (budget <= 100) {
+                    System.out.printf("Somewhere in Bulgaria%n");
+                    System.out.printf("Camp - %.2f%n", budget * 0.30);
+                }
+                else if (budget <= 1000) {
+                    System.out.printf("Somewhere in Balkans%n");
+                    System.out.printf("Camp - %.2f%n", budget * 0.40);
+                }
+                else {
+                    System.out.printf("Somewhere in Europe%n");
+                    System.out.printf("Hotel - %.2f%n", budget * 0.90);
+                }
+                break;
+            case "winter":
+                if (budget <= 100) {
+                    System.out.printf("Somewhere in Bulgaria%n");
+                    System.out.printf("Hotel - %.2f%n", budget * 0.70);
+                }
+                else if (budget <= 1000) {
+                    System.out.printf("Somewhere in Balkans%n");
+                    System.out.printf("Hotel - %.2f%n", budget * 0.80);
+                }
+                else {
+                    System.out.printf("Somewhere in Europe%n");
+                    System.out.printf("Hotel - %.2f%n", budget * 0.90);
+                }
+                break;
+        }
+    }
+}

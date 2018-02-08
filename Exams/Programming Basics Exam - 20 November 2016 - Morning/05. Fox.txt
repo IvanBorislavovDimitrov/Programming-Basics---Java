@@ -1,0 +1,28 @@
+import java.util.Scanner;
+
+public class Fox {
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+        int n = input.nextInt();
+        for (int i = 1; i <= n; ++i){
+            System.out.printf("%s\\%s/%s\n", repeatString("*", i), repeatString("-", 2 * n + 3 - 2 - 2 * i),
+                    repeatString("*", i));
+        }
+        for (int i = 0; i < n / 3; ++i){
+            System.out.printf("|%s\\%s/%s|\n",
+                    repeatString("*", n / 2 + i), repeatString("*", n - 2 * i),
+                    repeatString("*", n / 2 + i));
+        }
+        for (int i = 1; i <= n; ++i){
+            System.out.printf("%s\\%s/%s\n", repeatString("-", i), repeatString("*", 2 * n + 3 - 2 - 2 * i),
+                    repeatString("-", i));
+        }
+    }
+    public static String repeatString(String input, int count){
+        String text = "";
+        for (int i = 0; i < count; ++i){
+            text += input;
+        }
+        return text;
+    }
+}

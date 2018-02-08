@@ -1,0 +1,17 @@
+import java.util.Scanner;
+
+public class fish {
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+        double priceOfMackerel = input.nextDouble();
+        double priceOfSprat = input.nextDouble();
+        double kilogramsOfPalmwood = input.nextDouble();
+        double kilogramsOfScad = input.nextDouble();
+        int kilogramsOfClams = input.nextInt();
+        double priceOfPalmwood = 1.6 * priceOfMackerel;
+        double priceOfScad = 1.8 * priceOfSprat;
+        double priceOfClams = 7.5;
+        double bill = priceOfPalmwood * kilogramsOfPalmwood + priceOfClams * kilogramsOfClams + priceOfScad * kilogramsOfScad;
+        System.out.printf("%.2f\n", bill);
+    }
+}

@@ -1,0 +1,23 @@
+package sixth.of.march.two.thousand.and.sixteen;
+
+import java.util.Scanner;
+
+public class StudyHall {
+
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+        double w = Double.parseDouble(input.nextLine());
+        double h = Double.parseDouble(input.nextLine());
+        int countOfSeats = findSpace(w, h);
+        System.out.println(countOfSeats);
+    }
+
+    public static int findSpace(double length, double width) {
+        double widthOfRoom = width * 100; // in cm
+        widthOfRoom -= 100; // after removing hall
+        int countOfDecks = (int)(widthOfRoom / 70);
+        double lengthOfRoom = length * 100;
+        int rows = (int)(lengthOfRoom / 120);
+        return  countOfDecks * rows - 3;
+    }
+}

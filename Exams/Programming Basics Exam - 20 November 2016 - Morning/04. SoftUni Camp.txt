@@ -1,0 +1,35 @@
+import java.util.Scanner;
+
+public class SoftUniCamp {
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+        short groups = input.nextShort();
+        short people, peopleWithCar = 0, peopleWithMicroBus = 0, peopleWithSmallBus = 0;
+        short peopleWithBigBus = 0, peopleWithTrain = 0, allPeople = 0;
+        for (short i = 0; i < groups; ++i){
+            people = input.nextShort();
+            if (people <= 5){
+                peopleWithCar += people;
+            }
+            else if (people <= 12){
+                peopleWithMicroBus += people;
+            }
+            else if (people <= 25){
+                peopleWithSmallBus += people;
+                }
+            else if (people <= 40){
+                peopleWithBigBus += people;
+            }
+            else {
+                peopleWithTrain += people;
+            }
+            allPeople += people;
+        }
+        System.out.printf("%.2f%%\n", (double)peopleWithCar / allPeople * 100);
+        System.out.printf("%.2f%%\n", (double)peopleWithMicroBus / allPeople * 100);
+        System.out.printf("%.2f%%\n", (double)peopleWithSmallBus / allPeople * 100);
+        System.out.printf("%.2f%%\n", (double)peopleWithBigBus / allPeople * 100);
+        System.out.printf("%.2f%%\n", (double)peopleWithTrain / allPeople * 100);
+
+    }
+}

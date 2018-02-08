@@ -1,0 +1,46 @@
+import java.text.DecimalFormat;
+import java.util.Scanner;
+
+public class TransportPrice {
+
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+        int kilometres = Integer.parseInt(input.nextLine());
+        String dayOrNight = input.nextLine();
+        dayOrNight = dayOrNight.toLowerCase();
+        double price = taxiPrice(kilometres, dayOrNight);
+        DecimalFormat decimalFormat = new DecimalFormat("#.##");
+        if (kilometres >= 100) {
+            double currentPrice = trainPrice(kilometres);
+            if (currentPrice < price) {
+                price = currentPrice;
+            }
+        }
+        else if (kilometres >= 20) {
+            double currentPrice = busPrice(kilometres);
+            if (currentPrice < price) {
+                price = currentPrice;
+            }
+        }
+        System.out.println(decimalFormat.format(price));
+    }
+
+    public static double taxiPrice(int kilometres, String dayOrNight) {
+        double price = 0;
+        if (dayOrNight.equals("day")) {
+            price = 0.7 + 0.79 * kilometres;
+        }
+        else if (dayOrNight.equals("night")) {
+            price = 0.7 + 0.9 * kilometres;
+        }
+        return price;
+    }
+
+    public static double busPrice(int kilometres) {
+        return 0.09 * kilometres;
+    }
+
+    public static double trainPrice(int kilometres) {
+        return 0.06 * kilometres;
+    }
+}

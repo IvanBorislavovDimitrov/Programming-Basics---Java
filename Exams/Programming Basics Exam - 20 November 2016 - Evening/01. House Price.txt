@@ -1,0 +1,15 @@
+import java.util.Scanner;
+
+public class FlatPrice {
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+        double smallRoom = input.nextDouble();
+        double kitchen = input.nextDouble();
+        double priceForSquareMeter = input.nextDouble();
+        double bathroom = smallRoom / 2;
+        double secondRoom = 1.10 * smallRoom;
+        double thirdRoom = 1.10 * secondRoom;
+        double fullArea = (smallRoom + kitchen + bathroom + secondRoom + thirdRoom) * 1.05;
+        System.out.printf("%.2f\n", fullArea * priceForSquareMeter);
+    }
+}

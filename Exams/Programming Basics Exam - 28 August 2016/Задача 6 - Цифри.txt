@@ -1,0 +1,31 @@
+import java.util.Scanner;
+
+public class Numbers {
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+        int n = input.nextInt();
+        int thirdNum = n % 10;
+        int secondNum = n / 10 % 10;
+        int firstNum = n / 100;
+        int row = firstNum + secondNum;
+        int col = firstNum + thirdNum;
+        for (int i = 0; i < row; ++i){
+            for (int j = 0; j < col; ++j){
+               /* thirdNum = n % 10;
+                secondNum = n / 10 % 10;
+                firstNum = n / 100;*/
+                if (n % 5 == 0){
+                    n -= firstNum;
+                }
+                else if (n % 3 == 0){
+                    n -= secondNum;
+                }
+                else {
+                    n += thirdNum;
+                }
+                System.out.printf("%d ", n);
+            }
+            System.out.printf("\n");
+        }
+    }
+}

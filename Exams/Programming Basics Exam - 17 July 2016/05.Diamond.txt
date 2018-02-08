@@ -1,0 +1,32 @@
+import java.util.Scanner;
+
+public class Diamant {
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+        int n = input.nextInt();
+        System.out.format("%s%s%s\n", repeatString(".", n),
+                repeatString("*", 3 * n), repeatString(".", n));
+        for (int i = 1; i < n; i++){
+            System.out.format("%s*%s*%s\n", repeatString(".", n - i),
+                    repeatString(".", 5 * n - (2 * (n - i) + 2)), repeatString(".", n - i));
+        }
+        System.out.println(repeatString("*", 5 * n));
+        int number = 3 * n + 2 - (n + 1); // bottom part
+        for (int i = 1; i <= number; i++){
+            if (i != number)
+                System.out.format("%s*%s*%s\n", repeatString(".", i),
+                        repeatString(".", 5 * n - (2 * i + 2)), repeatString(".", i));
+            else {
+                System.out.format("%s*%s*%s\n", repeatString(".", i),
+                        repeatString("*", 5 * n - (2 * i + 2)), repeatString(".", i));
+            }
+        }
+    }
+    public static String repeatString (String input, int count){
+        String text = "";
+        for (int i = 0; i < count; i++){
+            text += input;
+        }
+        return text;
+    }
+}

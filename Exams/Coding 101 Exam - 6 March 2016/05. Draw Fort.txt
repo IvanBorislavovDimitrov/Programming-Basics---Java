@@ -1,0 +1,31 @@
+package sixth.of.march.two.thousand.and.sixteen;
+
+import java.util.Scanner;
+
+public class DrawFort {
+
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+        int n = input.nextInt();
+        System.out.printf("/%s\\%s/%s\\%n", repeatString("^", n / 2),
+                repeatString("_", 2 * n - n / 2 - n / 2 - 4),
+                repeatString("^", n / 2));
+        for (int i = 0; i < n - 3; ++i) {
+            System.out.printf("|%s|%n", repeatString(" ", 2 * n - 2));
+        }
+        System.out.printf("|%s%s%s|%n", repeatString(" ", n / 2 + 1),
+                repeatString("_", 2 * n - n / 2 - n / 2 - 4),
+                repeatString(" ", n / 2 + 1));
+        System.out.printf("\\%s/%s\\%s/%n", repeatString("_", n / 2),
+                repeatString(" ", 2 * n - n / 2 - n / 2 - 4),
+                repeatString("_", n / 2));
+    }
+
+    public static String repeatString(String input, int count) {
+        StringBuilder text = new StringBuilder();
+        for (int i = 0; i < count; ++i) {
+            text.append(input);
+        }
+        return text.toString();
+    }
+}

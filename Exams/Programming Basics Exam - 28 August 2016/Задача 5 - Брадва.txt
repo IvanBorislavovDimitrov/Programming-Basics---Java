@@ -1,0 +1,36 @@
+import java.util.Scanner;
+
+public class Axe {
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+        int n = input.nextInt();
+        int dashes = 0;
+        for (int i = 0; i < n; ++i){
+            System.out.printf("%s*%s*%s\n", repeatString("-", 3 * n),
+                    repeatString("-", i), repeatString("-", 2 * n - 2 - i));
+            dashes = i;
+        }
+        for (int i = 0; i < n / 2; ++i){
+            System.out.printf("%s*%s*%s\n", repeatString("*", 3 * n),
+                    repeatString("-", dashes),
+                    repeatString("-", 2 * n - 2 - dashes));
+        }
+        int lastLineDashes = 0;
+        for (int i = 0; i < n / 2 - 1; ++i){
+            System.out.printf("%s*%s*%s\n", repeatString("-", 3 * n - i),
+                    repeatString("-", dashes + 2 * i),
+                    repeatString("-", 2 * n - 2 - dashes - i));
+            lastLineDashes = i;
+        }
+        System.out.printf("%s*%s*%s\n", repeatString("-", 3 * n - lastLineDashes - 1),
+                repeatString("*", dashes + 2 * lastLineDashes + 2),
+                repeatString("-", 2 * n - 2 - dashes - lastLineDashes - 1));
+    }
+    public static String repeatString(String input, int count){
+        String text = "";
+        for (int i = 0; i < count; ++i){
+            text += input;
+        }
+        return text;
+    }
+}

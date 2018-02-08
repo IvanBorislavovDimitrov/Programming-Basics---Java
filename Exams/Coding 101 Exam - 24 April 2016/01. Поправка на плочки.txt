@@ -1,0 +1,24 @@
+package twenty.fourt.of.april.two.thousand.and.sixteen;
+
+import java.util.Scanner;
+
+public class RepairTiles {
+
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+        int N = input.nextInt();
+        double W = input.nextDouble();
+        double L = input.nextDouble();
+        int M = input.nextInt();
+        int O = input.nextInt();
+
+        int allArea = N * N;
+        int areaOfBench = M * O;
+        int areaForCover = allArea - areaOfBench;
+        double areaOfTiles = W * L;
+        double neededTiles = areaForCover / areaOfTiles;
+        double neededTime = neededTiles * 0.2;
+        System.out.printf("%.2f%n", neededTiles);
+        System.out.printf("%.2f%n", neededTime);
+    }
+}

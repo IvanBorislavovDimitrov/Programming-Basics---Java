@@ -1,0 +1,22 @@
+package twenty.six.of.march.two.thousand.and.sixteen;
+
+import java.text.DecimalFormat;
+import java.util.Scanner;
+
+public class VegetableShop {
+
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+        DecimalFormat decimalFormat = new DecimalFormat("#.#############");
+        double priceForKilogramVegetables = Double.parseDouble(input.nextLine());
+        double priceForKilogramFruits = Double.parseDouble(input.nextLine());
+        int kilogramsOfVegetables = Integer.parseInt(input.nextLine());
+        int kilogramsOfFruits = Integer.parseInt(input.nextLine());
+
+        double priceOfVegetables = priceForKilogramVegetables * kilogramsOfVegetables;
+        double priceOfFruits = priceForKilogramFruits * kilogramsOfFruits;
+
+        double allPrice = priceOfFruits + priceOfVegetables;
+        System.out.println(decimalFormat.format(allPrice / 1.94));
+    }
+}

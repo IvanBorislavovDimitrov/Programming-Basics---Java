@@ -1,0 +1,22 @@
+import java.util.Scanner;
+
+public class MaxCombination {
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+        int m = input.nextInt();
+        int n = input.nextInt();
+        int max = input.nextInt();
+        int counter = 0, flag = 0;
+        for (int i = m; i <= n; ++i) {
+            for (int j = m; j <= n; ++j) {
+                if (counter == max) {
+                    flag = 1;
+                    break;
+                }
+                System.out.printf("<%d-%d>", i, j);
+                counter++;
+            }
+            if (flag == 1) break;
+        }
+    }
+}

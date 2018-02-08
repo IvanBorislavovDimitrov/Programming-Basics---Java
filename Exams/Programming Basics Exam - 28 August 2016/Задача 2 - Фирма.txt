@@ -1,0 +1,19 @@
+import java.util.Scanner;
+
+public class Company {
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+        int neededHours = input.nextInt();
+        short allDays = input.nextShort();
+        short employeesThatCanWork = input.nextShort();
+        float hoursOfWork = 0.9f * allDays * 8;
+        float incomeTime = employeesThatCanWork * 2 * allDays;
+        float allHours = hoursOfWork + incomeTime;
+        if (neededHours > allHours){
+            System.out.printf("Not enough time!%.0f hours needed.\n", Math.ceil(neededHours - allHours));
+        }
+        else {
+            System.out.printf("Yes!%.0f hours left.\n", Math.floor(allHours - neededHours));
+        }
+    }
+}

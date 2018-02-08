@@ -1,0 +1,43 @@
+import java.util.Scanner;
+
+public class TicketForMatch {
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+        double budget = Double.parseDouble(input.nextLine());
+        String ticket = input.nextLine();
+        int people = input.nextInt();
+        double newBudget = budget;
+        ticket = ticket.toLowerCase();
+        double ticketPrice = 0;
+        if (ticket.equals("vip")){
+            ticketPrice = 499.99;
+        }
+        else if (ticket.equals("normal")){
+            ticketPrice = 249.99;
+        }
+
+        if (people >= 1 && people <= 4){
+            newBudget = 0.25 * budget;
+        }
+        else if (people >= 5 && people <= 9){
+            newBudget = 0.40 * budget;
+        }
+        else if (people >= 10 && people <= 24){
+            newBudget = 0.50 * budget;
+        }
+        else if (people >= 25 && people <= 49){
+            newBudget = 0.6 * budget;
+        }
+        else if (people >= 50){
+            newBudget = 0.75 * budget;
+        }
+
+        double neededMoney = people * ticketPrice;
+        if (newBudget >= neededMoney){
+            System.out.format("Yes! You have %.2f leva left.\n", newBudget - neededMoney);
+        }
+        else {
+            System.out.format("Not enough money! You need %.2f leva.\n", neededMoney - newBudget);
+        }
+    }
+}

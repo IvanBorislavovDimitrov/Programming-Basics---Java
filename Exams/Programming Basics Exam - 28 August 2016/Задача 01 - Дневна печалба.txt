@@ -1,0 +1,12 @@
+import java.util.Scanner;
+
+public class DailySalary {
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+        byte workDays = input.nextByte();
+        float dailySalary = input.nextFloat();
+        float course = input.nextFloat();
+        float clearYearSalary = 0.75f * (workDays * dailySalary * 12 + workDays * dailySalary * 2.5f) * course; // leva
+        System.out.printf("%.2f\n", clearYearSalary / 365);
+    }
+}

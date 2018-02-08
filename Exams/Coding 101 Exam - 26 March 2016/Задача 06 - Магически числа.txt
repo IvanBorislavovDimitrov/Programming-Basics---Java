@@ -1,0 +1,40 @@
+package twenty.six.of.march.two.thousand.and.sixteen;
+
+import java.util.Scanner;
+
+public class MagicNumbers {
+
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+        int n = input.nextInt();
+        /*for (int i = 111111; i <= 999999; ++i) {
+            int num = i;
+            int multiply = 1;
+            while (num !=0) {
+                int lastNum = num % 10;
+
+
+                multiply *= lastNum;
+                num /= 10;
+            }
+            if (multiply == n) {
+                System.out.printf("%d ", i);
+            }
+        }*/
+        for (int i = 1; i < 10; ++i) {
+            for (int a = 1; a < 10; ++a) {
+                for (int b = 1; b < 10; ++b) {
+                    for (int c = 1; c < 10; ++c) {
+                        for (int d = 1; d < 10; ++d) {
+                            for (int e = 1; e < 10; ++e) {
+                                if ((i * a * b * c * d * e) == n) {
+                                    System.out.printf("%d%d%d%d%d%d ", i, a, b, c, d, e);
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,82 @@
+import java.util.Scanner;
+
+public class HotelRoom {
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+        String month = input.nextLine();
+        month = month.toLowerCase();
+        double studioPrice, apartmentPrice;
+        short countOfDays = Short.parseShort(input.nextLine());
+        switch (month){
+            case may{
+                studioPrice = 50  countOfDays;
+                apartmentPrice = 65  countOfDays;
+                if (countOfDays  14)
+                    studioPrice = 0.7;
+                else if (countOfDays  7)
+                    studioPrice = 0.95;
+                if (countOfDays  14)
+                    apartmentPrice = 0.9;
+                System.out.printf(Apartment %.2f lv.n, apartmentPrice);
+                System.out.printf(Studio %.2f lv.n, studioPrice);
+                break;
+            }
+            case october{
+                studioPrice = 50  countOfDays;
+                apartmentPrice = 65  countOfDays;
+                if (countOfDays  14)
+                    studioPrice = 0.7;
+                else if (countOfDays  7)
+                    studioPrice = 0.95;
+                if (countOfDays  14)
+                    apartmentPrice = 0.9;
+                System.out.printf(Apartment %.2f lv.n, apartmentPrice);
+                System.out.printf(Studio %.2f lv.n, studioPrice);
+                break;
+            }
+            case june{
+                studioPrice = 75.20  countOfDays;
+                apartmentPrice = 68.70   countOfDays;
+                if (countOfDays = 14)
+                    studioPrice = 0.8;
+                if (countOfDays = 14)
+                    apartmentPrice = 0.9;
+                System.out.printf(Apartment %.2f lv.n, apartmentPrice);
+                System.out.printf(Studio %.2f lv.n, studioPrice);
+                break;
+            }
+            case september{
+                studioPrice = 75.20  countOfDays;
+                apartmentPrice = 68.70   countOfDays;
+                if (countOfDays = 14)
+                    studioPrice = 0.8;
+                if (countOfDays = 14)
+                if (countOfDays  14)
+                    apartmentPrice = 0.9;
+                System.out.printf(Apartment %.2f lv.n, apartmentPrice);
+                System.out.printf(Studio %.2f lv.n, studioPrice);
+                break;
+            }
+            case july{
+                studioPrice = 76  countOfDays;
+                apartmentPrice = 77   countOfDays;
+                if (countOfDays  14)
+                    apartmentPrice = 0.9;
+                System.out.printf(Apartment %.2f lv.n, apartmentPrice);
+                System.out.printf(Studio %.2f lv.n, studioPrice);
+                break;
+            }
+            case august{
+                studioPrice = 76  countOfDays;
+                apartmentPrice = 77   countOfDays;
+                if (countOfDays  14)
+                    apartmentPrice = 0.9;
+                System.out.printf(Apartment %.2f lv.n, apartmentPrice);
+                System.out.printf(Studio %.2f lv.n, studioPrice);
+                break;
+            }
+            default
+                System.out.printf(Error);
+        }
+    }
+}

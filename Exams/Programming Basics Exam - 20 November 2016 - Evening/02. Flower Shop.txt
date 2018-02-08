@@ -1,0 +1,24 @@
+import java.util.Scanner;
+
+/**
+ * Created by Ivan on 26.7.2017 ?..
+ */
+public class FlowersStore {
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+        byte magnolii = input.nextByte();
+        byte ziumbiuli = input.nextByte();
+        byte rozi = input.nextByte();
+        byte kaktusi = input.nextByte();
+        float cenaNaPodaraka = input.nextFloat();
+        float pechalba = magnolii * 3.25f + ziumbiuli * 4 + rozi * 3.5f + kaktusi * 8;
+        pechalba *= 0.95f;
+        if (pechalba < cenaNaPodaraka){
+            System.out.printf("She will have to borrow %.0f leva.\n", Math.ceil(cenaNaPodaraka - pechalba));
+        }
+        else {
+            System.out.printf("She is left with %.0f leva.\n", Math.floor(pechalba - cenaNaPodaraka));
+
+        }
+    }
+}

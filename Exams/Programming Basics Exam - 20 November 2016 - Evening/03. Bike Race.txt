@@ -1,0 +1,50 @@
+import java.util.Scanner;
+
+/**
+ * Created by Ivan on 26.7.2017 ?..
+ */
+public class BikeRace {
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+        byte juniors = input.nextByte();
+        byte seniors = input.nextByte();
+        input.nextLine();
+        String trace = input.nextLine();
+        double taxJuniors = 0, taxSeniors = 0, tax = 0;
+        trace = trace.toLowerCase();
+        switch (trace){
+            case "trail":{
+                taxJuniors = 5.5 * juniors;
+                taxSeniors = 7 * seniors;
+                tax = taxJuniors + taxSeniors;
+                tax *= 0.95;
+                break;
+            }
+            case "cross-country":{
+                taxJuniors = 8 * juniors;
+                taxSeniors = 9.50 * seniors;
+                tax = taxJuniors + taxSeniors;
+                tax *= 0.95;
+                if ((juniors + seniors) >= 50){
+                    tax *= 0.75;
+                }
+                break;
+            }
+            case "downhill":{
+                taxJuniors = 12.25 * juniors;
+                taxSeniors = 13.75 * seniors;
+                tax = taxJuniors + taxSeniors;
+                tax *= 0.95;
+                break;
+            }
+            case "road":{
+                taxJuniors = 20 * juniors;
+                taxSeniors = 21.50 * seniors;
+                tax = taxJuniors + taxSeniors;
+                tax *= 0.95;
+                break;
+            }
+        }
+        System.out.printf("%.2f\n", tax);
+    }
+}
